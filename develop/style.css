@@ -1,0 +1,155 @@
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+ul li {
+  float: left;
+  margin-right: 15px;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.navbar {
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  font-size: .79rem;
+  color: black;
+  opacity: .75;
+  padding-top: 23px;
+}
+
+.navbar a {
+  font-size: .79rem;
+  color: black;
+  opacity: .9;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+
+.left-nav {
+  padding-left: 25px;
+  float: left;
+}
+
+.right-nav {
+  position: absolute !important;
+  right: 0 !important;
+  float: right;
+  padding-right: 105px;
+}
+
+.main {
+  padding: 190px 0px 0px;
+}
+
+#search-box {
+  display: flex;
+  border: 1px solid #dfe1e5;
+  border-radius: 24px;
+  width: 484px;
+  height: 44px;
+  margin: 0 auto;
+}
+
+#chopCheese-logo {
+  display: block;
+  width: 272px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 27px;
+}
+
+
+#search-field {
+  border: none;
+  width: 85%;
+  font-size: .79rem;
+  color: black;
+}
+
+#search-magnifying-glass {
+  width: 15px;
+  height: auto;
+  opacity: .4;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#submit-field {
+  display: block;
+  width: 582px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 18px 0px 0px 0px;
+}
+
+.submit-button {
+  color: #5F6368;
+  line-height: 27px;
+  background-color: #f2f2f2;
+  border: 1px solid #f2f2f2;
+  border-radius: 4px;
+  color: #5F6368;
+  font-size: 14px;
+  margin: 11px 4px;
+  padding: 0 16px;
+  line-height: 27px;
+  height: 36px;
+  text-align: center;
+}
+
+.footer {
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  line-height: 40px;
+  background-color: #f2f2f2;
+  border-top: 1px solid #e4e4e4;
+  color: #5f6368;
+  font-size: .85rem;
+
+}
+
+.footer a {
+  font-size: .85rem;
+  color: black;
+  opacity: .6;
+  text-decoration: none;
+  padding-right: 15px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.right-nav-footer {
+  position: absolute !important;
+  right: 0 !important;
+  float: right;
+  padding-right: 5px;
+}
