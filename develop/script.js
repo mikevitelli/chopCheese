@@ -1,3 +1,5 @@
+var userData = "tater tots";
+
 // reddit API
 // =======================================================
 // var CLIENT_ID = "RWhVtoOoO6-pLA";
@@ -19,10 +21,32 @@
 // =======================================================
 // GIPHY API
 
-var giphyKey = "QZW2fQn2JVqIqSnBTL5uNajwBc3KR8qE";
-var userData = "tater tots".replace(" ", "+");
+// var giphyKey = "QZW2fQn2JVqIqSnBTL5uNajwBc3KR8qE";
 
-var queryURL = `https://api.giphy.com/v1/gifs/random?api_key=${giphyKey}&tag=${userData}`;
+// var queryURL = `https://api.giphy.com/v1/gifs/random?api_key=${giphyKey}&tag=${userData}`;
+
+// $.ajax({
+//   url: queryURL,
+//   method: "GET",
+//   //after the data from the AJAX request comes back
+// }).then(function (response) {
+//   // save the img url property
+
+//   // fill in dummy block with image from AJAX req
+
+//   console.log(response);
+//   console.log(userData);
+// });
+
+// =======================================================
+
+// =======================================================
+// Wiki API
+// =======================================================
+
+var searchQuery = userData.replace(" ", "%20");
+
+var queryURL = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${searchQuery}&origin=*`;
 
 $.ajax({
   url: queryURL,
@@ -34,11 +58,4 @@ $.ajax({
   // fill in dummy block with image from AJAX req
 
   console.log(response);
-  console.log(userData);
 });
-
-// =======================================================
-
-// =======================================================
-// Wiki API
-// =======================================================
