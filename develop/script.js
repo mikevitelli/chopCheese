@@ -18,6 +18,19 @@ $.ajax({
 
 // =======================================================
 // GIPHY API
+
+var giphyKey = "QZW2fQn2JVqIqSnBTL5uNajwBc3KR8qE";
+
+var queryURL =
+  "https://api.giphy.com/v1/gifs/trending?api_key=QZW2fQn2JVqIqSnBTL5uNajwBc3KR8qE";
+
+$.ajax({
+  url: queryURL,
+  method: "GET",
+}).then(function (response) {
+  console.log(response);
+});
+
 // =======================================================
 
 // =======================================================
