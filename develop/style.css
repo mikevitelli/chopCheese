@@ -5,62 +5,8 @@ textarea:focus,
 button:focus {
   outline: none;
 }
-
-ul {
-  list-style-type: none;
-  padding: 0px;
-  margin: 0px;
-}
-
-ul li {
-  float: left;
-  margin-right: 15px;
-}
-
-html {
-  font-family: Arial, Helvetica, sans-serif;
-
-}
-
-.navbar {
-  display: block;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 40px;
-  font-size: .79rem;
-  color: black;
-  opacity: .75;
-  padding-top: 23px;
-}
-
-.navbar a {
-  font-size: .79rem;
-  color: black;
-  opacity: .9;
-  text-decoration: none;
-}
-
-.navbar a:hover {
-  text-decoration: underline;
-}
-
-
-.left-nav {
-  padding-left: 25px;
-  float: left;
-}
-
-.right-nav {
-  position: absolute !important;
-  right: 0 !important;
-  float: right;
-  padding-right: 105px;
-}
-
-.main {
-  padding: 190px 0px 0px;
+#search-area {
+  margin-top: 20%;
 }
 
 #search-box {
@@ -78,23 +24,14 @@ html {
   height: auto;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 27px;
 }
-
 
 #search-field {
   border: none;
   width: 85%;
   font-size: .79rem;
+  margin:0 auto;
   color: black;
-}
-
-#search-magnifying-glass {
-  width: 15px;
-  height: auto;
-  opacity: .4;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
 #submit-field {
@@ -118,38 +55,4 @@ html {
   line-height: 27px;
   height: 36px;
   text-align: center;
-}
-
-.footer {
-  display: block;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 40px;
-  line-height: 40px;
-  background-color: #f2f2f2;
-  border-top: 1px solid #e4e4e4;
-  color: #5f6368;
-  font-size: .85rem;
-
-}
-
-.footer a {
-  font-size: .85rem;
-  color: black;
-  opacity: .6;
-  text-decoration: none;
-  padding-right: 15px;
-}
-
-.footer a:hover {
-  text-decoration: underline;
-}
-
-.right-nav-footer {
-  position: absolute !important;
-  right: 0 !important;
-  float: right;
-  padding-right: 5px;
 }
