@@ -41,20 +41,36 @@
 // =======================================================
 // Wiki API
 
-var userData = "tater tots";
-var searchQuery = userData.replace(" ", "%20");
+// var userData = "tater tots";
+// var searchQuery = userData.replace(" ", "%20");
 
-var queryURL = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${searchQuery}&origin=*`;
+// var queryURL = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${searchQuery}&origin=*`;
+
+// $.ajax({
+//   url: queryURL,
+//   method: "GET",
+//   //after the data from the AJAX request comes back
+// }).then(function (response) {
+//   // save the img url property
+
+//   // fill in dummy block with image from AJAX req
+
+//   console.log(response);
+// });
+// =======================================================
+
+// =======================================================
+// YouTube API
+var userData = "tater tots";
+
+var queryURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyBgEdkUbHxjy56Ij2mu4mZMfMc7I8pL280&type=video&q=${userData}`;
 
 $.ajax({
   url: queryURL,
   method: "GET",
   //after the data from the AJAX request comes back
 }).then(function (response) {
-  // save the img url property
-
-  // fill in dummy block with image from AJAX req
-
+  // Console log info from 5 videos
   console.log(response);
 });
-// =======================================================
+
