@@ -72,4 +72,5 @@ $.ajax({
 }).then(function (response) {
   // Console log info from 5 videos
   console.log(response);
+  console.log(response.items[0].id.videoId);
 });
