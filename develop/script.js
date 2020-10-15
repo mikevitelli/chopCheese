@@ -34,11 +34,9 @@ for (let i = 0; i < giphyTiles; i++) {
     method: "GET",
     //after the data from the AJAX request comes back
   }).then(function (response) {
-    // save the img url property
+    // assign URL to proper img tag
 
-    // fill in dummy block with image from AJAX req
-
-    console.log(response.data.image_original_url);
+    $("#gif-" + (i + 1)).attr("src", response.data.image_original_url);
   });
 }
 
