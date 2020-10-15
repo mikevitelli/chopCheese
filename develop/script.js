@@ -78,9 +78,9 @@ if (fallback) {
     case "tater tots":
       videoID = "Xi28pEbMdTw";
       break;
-    case "":
+    case "dogs":
       break;
-    case "":
+    case "cats":
       break;
   }
 } else {
@@ -122,5 +122,6 @@ if (window.innerWidth > 500) {
     });
   }
 }
+
 //make array with different predetermined video ids
 //
