@@ -1,58 +1,59 @@
-
 input:focus,
 select:focus,
 textarea:focus,
 button:focus {
-  outline: none;
+	outline: none;
 }
 #search-area {
-  margin-top: 20%;
+	margin-top: 20%;
 }
 
 #search-box {
-  display: flex;
-  border: 1px solid #dfe1e5;
-  border-radius: 24px;
-  width: 484px;
-  height: 44px;
-  margin: 0 auto;
+	display: flex;
+	border: 1px solid #dfe1e5;
+	border-radius: 24px;
+	width: 484px;
+	height: 44px;
+	margin: 0 auto;
+	background-color: #f39e30;
 }
 
 #chopCheese-logo {
-  display: block;
-  width: 272px;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
+	display: block;
+	width: 272px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #search-field {
-  border: none;
-  width: 85%;
-  font-size: .79rem;
-  margin:0 auto;
-  color: black;
+	border: none;
+	width: 85%;
+	font-size: 0.79rem;
+	margin: 0 auto;
+	color: black;
+	background-color: whitesmoke;
 }
 
 #submit-field {
-  display: block;
-  width: 582px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 18px 0px 0px 0px;
+	display: block;
+	width: 582px;
+	margin: 0 auto;
+	text-align: center;
+	padding: 18px 0px 0px 0px;
 }
 
 .submit-button {
-  color: #5F6368;
-  line-height: 27px;
-  background-color: #f2f2f2;
-  border: 1px solid #f2f2f2;
-  border-radius: 4px;
-  color: #5F6368;
-  font-size: 14px;
-  margin: 11px 4px;
-  padding: 0 16px;
-  line-height: 27px;
-  height: 36px;
-  text-align: center;
+	color: #5f6368;
+	line-height: 27px;
+	background-color: #f2f2f2;
+	border: 1px solid #f2f2f2;
+	border-radius: 4px;
+	color: #5f6368;
+	font-size: 14px;
+	margin: 11px 4px;
+	padding: 0 16px;
+	line-height: 27px;
+	height: 36px;
+	text-align: center;
 }
