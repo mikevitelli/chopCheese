@@ -1,3 +1,6 @@
+var userData = "tater tots";
+var giphyTiles = 2;
+
 // =======================================================
 // reddit API
 // var CLIENT_ID = "RWhVtoOoO6-pLA";
@@ -19,22 +22,23 @@
 // =======================================================
 // GIPHY API
 
-// var giphyKey = "QZW2fQn2JVqIqSnBTL5uNajwBc3KR8qE";
+var giphyKey = "QZW2fQn2JVqIqSnBTL5uNajwBc3KR8qE";
+var search = userData.replace(" ", "+");
 
-// var queryURL = `https://api.giphy.com/v1/gifs/random?api_key=${giphyKey}&tag=${userData}`;
+var queryURL = `https://api.giphy.com/v1/gifs/random?limit=2&api_key=${giphyKey}&tag=${search}`;
 
-// $.ajax({
-//   url: queryURL,
-//   method: "GET",
-//   //after the data from the AJAX request comes back
-// }).then(function (response) {
-//   // save the img url property
+// make as many requests as giphy tiles
+for (let i = 0; i < giphyTiles; i++) {
+  $.ajax({
+    url: queryURL,
+    method: "GET",
+    //after the data from the AJAX request comes back
+  }).then(function (response) {
+    // assign URL to proper img tag
 
-//   // fill in dummy block with image from AJAX req
-
-//   console.log(response);
-//   console.log(userData);
-// });
+    $("#gif-" + (i + 1)).attr("src", response.data.image_original_url);
+  });
+}
 
 // =======================================================
 
@@ -62,8 +66,9 @@
 // =======================================================
 // YouTube API
 var userData = "tater tots";
+var youtubeAPIkey = "AIzaSyBgEdkUbHxjy56Ij2mu4mZMfMc7I8pL280";
 
-var queryURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyBgEdkUbHxjy56Ij2mu4mZMfMc7I8pL280&type=video&q=${userData}`;
+var queryURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${youtubeAPIkey}&type=video&q=${userData}`;
 
 $.ajax({
   url: queryURL,
