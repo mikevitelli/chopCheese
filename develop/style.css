@@ -4,14 +4,12 @@ textarea:focus,
 button:focus {
 	outline: none;
 }
-
 body {
 	background-color: #f9e4ce;
 }
 #search-area {
 	margin-top: 20%;
 }
-
 #search-box {
 	display: flex;
 	border: 1px solid #dfe1e5;
@@ -19,9 +17,8 @@ body {
 	width: 484px;
 	height: 44px;
 	margin: 0 auto;
-	background-color: #f39e30;
+	background-color: #f4bf7a;
 }
-
 #chopCheese-logo {
 	display: block;
 	width: 272px;
@@ -29,16 +26,15 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
-
 #search-field {
 	border: none;
 	width: 85%;
 	font-size: 0.79rem;
+	font-weight: 700;
 	margin: 0 auto;
-	color: black;
-	background-color: whitesmoke;
+	color: white;
+	background-color: #f4bf7a;
 }
-
 #submit-field {
 	display: block;
 	width: 582px;
@@ -46,14 +42,13 @@ body {
 	text-align: center;
 	padding: 18px 0px 0px 0px;
 }
-
 .submit-button {
-	color: #5f6368;
+	color: #db9e21;
 	line-height: 27px;
 	background-color: #f2f2f2;
 	border: 1px solid #f2f2f2;
 	border-radius: 4px;
-	color: #5f6368;
+	color: #db9e21;
 	font-size: 14px;
 	margin: 11px 4px;
 	padding: 0 16px;
@@ -61,3 +56,26 @@ body {
 	height: 36px;
 	text-align: center;
 }
+article.tile {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+/* .box {
+  border: solid 6px #F39E30;
+} */
+.is-parent {
+	background-color: #f39e30;
+}
+/* #reddit {
+  border: solid 6px #F39E30;
+}
+#youtube {
+  border: solid 6px red;
+}
+#giphy {
+  border: solid 6px #55ACEE;
+}
+#wikipedia {
+  border: solid 6px darkgrey;
+} */
