@@ -1,7 +1,9 @@
 var userData = "tater tots";
+var giphyTiles = 2;
+var fallbackVideos = {"tater tots":"", "":"", "":""}
 
-// reddit API
 // =======================================================
+// reddit API
 // var CLIENT_ID = "RWhVtoOoO6-pLA";
 // var URI = "https://mikevitelli.github.io/chopCheese/";
 
@@ -21,9 +23,33 @@ var userData = "tater tots";
 // =======================================================
 // GIPHY API
 
-// var giphyKey = "QZW2fQn2JVqIqSnBTL5uNajwBc3KR8qE";
+var giphyKey = "QZW2fQn2JVqIqSnBTL5uNajwBc3KR8qE";
+var search = userData.replace(" ", "+");
 
-// var queryURL = `https://api.giphy.com/v1/gifs/random?api_key=${giphyKey}&tag=${userData}`;
+var queryURL = `https://api.giphy.com/v1/gifs/random?limit=2&api_key=${giphyKey}&tag=${search}`;
+
+// make as many requests as giphy tiles
+for (let i = 0; i < giphyTiles; i++) {
+  $.ajax({
+    url: queryURL,
+    method: "GET",
+    //after the data from the AJAX request comes back
+  }).then(function (response) {
+    // assign URL to proper img tag
+
+    $("#gif-" + (i + 1)).attr("src", response.data.image_original_url);
+  });
+}
+
+// =======================================================
+
+// =======================================================
+// Wiki API
+
+// var userData = "tater tots";
+// var searchQuery = userData.replace(" ", "%20");
+
+// var queryURL = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${searchQuery}&origin=*`;
 
 // $.ajax({
 //   url: queryURL,
@@ -35,6 +61,7 @@ var userData = "tater tots";
 //   // fill in dummy block with image from AJAX req
 
 //   console.log(response);
+<<<<<<< HEAD
 //   console.log(userData);
 // });
 
@@ -47,15 +74,62 @@ var userData = "tater tots";
 var searchQuery = userData.replace(" ", "%20");
 
 var queryURL = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${searchQuery}&origin=*`;
+=======
+// });
+// =======================================================
+
+// =======================================================
+// YouTube API
+var userData = "tater tots";
+var youtubeAPIkey = "AIzaSyBgEdkUbHxjy56Ij2mu4mZMfMc7I8pL280";
+
+var queryURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${youtubeAPIkey}&type=video&q=${userData}`;
+>>>>>>> 77ad76ca8c3781d14e45e426d0c750efa3916184
 
 $.ajax({
   url: queryURL,
   method: "GET",
   //after the data from the AJAX request comes back
 }).then(function (response) {
-  // save the img url property
-
-  // fill in dummy block with image from AJAX req
-
+  // Console log info from 5 videos
   console.log(response);
+<<<<<<< HEAD
 });
+=======
+  //log first videos ID
+  console.log(response.items[0].id.videoId);
+  // $("#youtube").attr("src", "https://www.youtube.com/embed/Xi28pEbMdTw");
+});
+
+var videoID = "Xi28pEbMdTw";
+
+if (window.innerWidth > 500) {
+  // Video background script
+  // Loads the YouTube IFrame API JavaScript code.
+  var tag = document.createElement("script");
+  tag.src = "https://www.youtube.com/iframe_api";
+  // Inserts YouTube JS code into the page.
+  var firstScriptTag = document.getElementsByTagName("script")[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  var player;
+  // onYouTubeIframeAPIReady() is called when the IFrame API is ready to go.
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player("player", {
+      videoId: videoID, // the ID of the video (mentioned above)
+      playerVars: {
+        autoplay: 1, // start automatically
+        controls: 0, // don't show the controls (we can't click them anyways)
+        modestbranding: 1, // show smaller logo
+        loop: 1, // loop when complete
+        mute: 1,
+        cc_load_policy: 0, // Hide closed captions
+        iv_load_policy: 3,
+        playlist: "67w--Fn04xg", // required for looping, matches the video ID
+      },
+    });
+  }
+}
+
+//make array with different predetermined video ids
+//
+>>>>>>> 77ad76ca8c3781d14e45e426d0c750efa3916184
