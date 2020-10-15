@@ -1,6 +1,10 @@
-var userData = "tater tots";
+var userData = "cats";
 var giphyTiles = 2;
-var fallbackVideos = { "tater tots": "Xi28pEbMdTw", "": "", "": "" };
+var fallbackVideos = {
+  "tater tots": ["Xi28pEbMdTw", "4s3VZ4fS_gg", "zLdfPkC9wTE"],
+  dogs: ["pRIyR8wbu64", "3dcli9i_pvA", "AcL0MeVZIxM"],
+  cats: ["zQIawgxoox4", "rbNkc2xRPpA", "NsUWXo8M7UA"],
+};
 var videoID;
 var fallback = true;
 
@@ -68,21 +72,16 @@ for (let i = 0; i < giphyTiles; i++) {
 
 // =======================================================
 // YouTube API
-var userData = "tater tots";
 var youtubeAPIkey = "AIzaSyBgEdkUbHxjy56Ij2mu4mZMfMc7I8pL280";
 
 var queryURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${youtubeAPIkey}&type=video&q=${userData}`;
 
 if (fallback) {
-  switch (userData) {
-    case "tater tots":
-      videoID = "Xi28pEbMdTw";
-      break;
-    case "dogs":
-      break;
-    case "cats":
-      break;
-  }
+
+  // get random index from fallback choices
+  var randIndex = Math.floor(Math.random() * 3);
+  videoID = fallbackVideos[userData][randIndex];
+
 } else {
   $.ajax({
     url: queryURL,
