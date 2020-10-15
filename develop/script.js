@@ -7,6 +7,7 @@ var fallbackVideos = {
 };
 var videoID;
 var fallback = true;
+//var element = $("")
 
 // =======================================================
 // reddit API
@@ -123,4 +124,6 @@ if (window.innerWidth > 500) {
 // on search sumbission click, show container
 $(".button").click(function () {
   $("#wrapper").css("display", "block");
+  // assign new classes to the elements that move up
+  // element.addClass("classname")
 });
