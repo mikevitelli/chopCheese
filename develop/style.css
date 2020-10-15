@@ -4,6 +4,10 @@ textarea:focus,
 button:focus {
 	outline: none;
 }
+
+body {
+  background-color: #f9e4ce;
+}
 #search-area {
 	margin-top: 20%;
 }
