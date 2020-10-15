@@ -77,9 +77,11 @@ var youtubeAPIkey = "AIzaSyBgEdkUbHxjy56Ij2mu4mZMfMc7I8pL280";
 var queryURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${youtubeAPIkey}&type=video&q=${userData}`;
 
 if (fallback) {
+
   // get random index from fallback choices
   var randIndex = Math.floor(Math.random() * 3);
   videoID = fallbackVideos[userData][randIndex];
+
 } else {
   $.ajax({
     url: queryURL,
@@ -119,5 +121,6 @@ if (window.innerWidth > 500) {
     });
   }
 }
+
 //make array with different predetermined video ids
 //
