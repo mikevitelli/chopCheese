@@ -1,4 +1,3 @@
-
 input:focus,
 select:focus,
 textarea:focus,
@@ -29,8 +28,8 @@ button:focus {
 #search-field {
   border: none;
   width: 85%;
-  font-size: .79rem;
-  margin:0 auto;
+  font-size: 0.79rem;
+  margin: 0 auto;
   color: black;
 }
 
@@ -43,16 +42,20 @@ button:focus {
 }
 
 .submit-button {
-  color: #5F6368;
+  color: #5f6368;
   line-height: 27px;
   background-color: #f2f2f2;
   border: 1px solid #f2f2f2;
   border-radius: 4px;
-  color: #5F6368;
+  color: #5f6368;
   font-size: 14px;
   margin: 11px 4px;
   padding: 0 16px;
   line-height: 27px;
   height: 36px;
   text-align: center;
+}
+
+#wrapper {
+  display: none;
 }
