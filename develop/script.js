@@ -1,6 +1,8 @@
 var userData = "tater tots";
 var giphyTiles = 2;
-var fallbackVideos = {"tater tots":"", "":"", "":""}
+var fallbackVideos = { "tater tots": "Xi28pEbMdTw", "": "", "": "" };
+var videoID;
+var fallback = true;
 
 // =======================================================
 // reddit API
@@ -61,20 +63,6 @@ for (let i = 0; i < giphyTiles; i++) {
 //   // fill in dummy block with image from AJAX req
 
 //   console.log(response);
-<<<<<<< HEAD
-//   console.log(userData);
-// });
-
-// =======================================================
-
-// =======================================================
-// Wiki API
-// =======================================================
-
-var searchQuery = userData.replace(" ", "%20");
-
-var queryURL = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${searchQuery}&origin=*`;
-=======
 // });
 // =======================================================
 
@@ -84,25 +72,30 @@ var userData = "tater tots";
 var youtubeAPIkey = "AIzaSyBgEdkUbHxjy56Ij2mu4mZMfMc7I8pL280";
 
 var queryURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${youtubeAPIkey}&type=video&q=${userData}`;
->>>>>>> 77ad76ca8c3781d14e45e426d0c750efa3916184
 
-$.ajax({
-  url: queryURL,
-  method: "GET",
-  //after the data from the AJAX request comes back
-}).then(function (response) {
-  // Console log info from 5 videos
-  console.log(response);
-<<<<<<< HEAD
-});
-=======
-  //log first videos ID
-  console.log(response.items[0].id.videoId);
-  // $("#youtube").attr("src", "https://www.youtube.com/embed/Xi28pEbMdTw");
-});
-
-var videoID = "Xi28pEbMdTw";
-
+if (fallback) {
+  switch (userData) {
+    case "tater tots":
+      videoID = "Xi28pEbMdTw";
+      break;
+    case "":
+      break;
+    case "":
+      break;
+  }
+} else {
+  $.ajax({
+    url: queryURL,
+    method: "GET",
+    //after the data from the AJAX request comes back
+  }).then(function (response) {
+    // Console log info from 5 videos
+    console.log(response);
+    //log first videos ID
+    console.log(response.items[0].id.videoId);
+    // $("#youtube").attr("src", "https://www.youtube.com/embed/Xi28pEbMdTw");
+  });
+}
 if (window.innerWidth > 500) {
   // Video background script
   // Loads the YouTube IFrame API JavaScript code.
@@ -129,7 +122,5 @@ if (window.innerWidth > 500) {
     });
   }
 }
-
 //make array with different predetermined video ids
 //
->>>>>>> 77ad76ca8c3781d14e45e426d0c750efa3916184
