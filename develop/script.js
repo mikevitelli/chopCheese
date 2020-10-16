@@ -1,14 +1,21 @@
-var userData; // = "cats";
-var giphyTiles = 2;
+var userData = "cats";
+var giphyTiles = 4;
+
 var fallbackVideos = {
 	"tater tots": ["Xi28pEbMdTw", "4s3VZ4fS_gg", "zLdfPkC9wTE"],
 	dogs: ["pRIyR8wbu64", "3dcli9i_pvA", "AcL0MeVZIxM"],
 	cats: ["zQIawgxoox4", "rbNkc2xRPpA", "NsUWXo8M7UA"],
 };
+var fallbackWiki = {
+  "tater tots": ["Tater_tots"],
+  dogs: ["Dog"],
+  cats: ["Cat"],
+}
 var videoID;
 var fallback = true;
 //var element = $("")
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 // =======================================================
 // reddit API
@@ -175,8 +182,9 @@ fetch(url)
 	});
 =======
 
+=======
+>>>>>>> 0d5446a50dc75a60fd2dadcf5334be5aec3acd20
 function render() {
-  
   // =======================================================
   // reddit API
   // var CLIENT_ID = "RWhVtoOoO6-pLA";
@@ -241,7 +249,7 @@ function render() {
 
   // =======================================================
   // YouTube API
-  
+
   var youtubeAPIkey = "AIzaSyBgEdkUbHxjy56Ij2mu4mZMfMc7I8pL280";
 
   var queryURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${youtubeAPIkey}&type=video&q=${userData}`;
@@ -263,25 +271,15 @@ function render() {
       // $("#youtube").attr("src", "https://www.youtube.com/embed/Xi28pEbMdTw");
     });
   }
-  
-  
-    // Video background script
-    // Loads the YouTube IFrame API JavaScript code.
-    var tag = document.createElement("script");
-    tag.src = "https://www.youtube.com/iframe_api";
-    // Inserts YouTube JS code into the page.
-    var firstScriptTag = document.getElementsByTagName("script")[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    var player;
-    
 
-
-    
-    
-  
-
-
-
+  // Video background script
+  // Loads the YouTube IFrame API JavaScript code.
+  var tag = document.createElement("script");
+  tag.src = "https://www.youtube.com/iframe_api";
+  // Inserts YouTube JS code into the page.
+  var firstScriptTag = document.getElementsByTagName("script")[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  var player;
 
   // +++++++++++++++++++++++++++++++++++++++++++++++++
   // +++++++++++++++++++++++++++++++++++++++++++++++++
@@ -299,7 +297,7 @@ function render() {
     action: "query",
     format: "json",
     prop: "extracts",
-    titles: "cat",
+    titles: fallbackWiki[userData],
     formatversion: "2",
     exsentences: "10",
     exlimit: "1",
@@ -307,27 +305,31 @@ function render() {
   };
 
   url = url + "?origin=*";
-  Object.keys(params).forEach(function (key) { url += "&" + key + "=" + params[key]; });
+  Object.keys(params).forEach(function (key) {
+    url += "&" + key + "=" + params[key];
+  });
 
   fetch(url)
-    .then(function (response) { return response.json(); })
+    .then(function (response) {
+      return response.json();
+    })
     .then(function (response) {
       console.log(response);
       var wikiTitle = $("<h2>").text(response.query.pages[0].title);
       var wikiBody = $("<p>").text(response.query.pages[0].extract);
       $("#wikipedia-info").append(wikiTitle).append(wikiBody);
-
     })
-    .catch(function (error) { console.log(error); });
-
+    .catch(function (error) {
+      console.log(error);
+    });
 }
 
 // onYouTubeIframeAPIReady() is called when the IFrame API is ready to go.
 function onYouTubeIframeAPIReady() {
-  console.log(YT)
+  console.log(YT);
   player = new YT.Player("player", {
-    height: '100%',
-    width: '100%',
+    height: "100%",
+    width: "100%",
     videoId: videoID, // the ID of the video (mentioned above)
     playerVars: {
       autoplay: 1, // start automatically
@@ -340,18 +342,42 @@ function onYouTubeIframeAPIReady() {
       playlist: videoID, // required for looping, matches the video ID
     },
   });
-  console.log(player)
+  console.log(player);
 }
 
-
-  // on search sumbission click, show container
+// on search sumbission click, show container
 $("#search-button").click(function (event) {
   event.preventDefault();
-  $("#wrapper").css("display", "block");
   // grab search value
   userData = $("#search-bar").val();
-  render();
+  if (userData !== "") {
+    // show tiles
+    $("#wrapper").css("display", "block");
+    render();
+  }
+  
   // assign new classes to the elements that move up
   // element.addClass("classname")
 });
+<<<<<<< HEAD
 >>>>>>> 0be4130900c65b3ab123359657e7914b4244de61
+=======
+
+window.onscroll = function () {
+  stickySearch();
+};
+var header = document.getElementById("navbar");
+var wrapper = document.getElementById("wrapper");
+var sticky = wrapper.offsetTop;
+function stickySearch() {
+  if (window.pageYOffset > 250) {
+    header.classList.add("sticky");
+    document.getElementById("navbar").style.display = "block";
+  } else {
+    header.classList.remove("sticky");
+    document.getElementById("navbar").style.display = "none";
+  }
+}
+
+console.log(wrapper.offsetTop);
+>>>>>>> 0d5446a50dc75a60fd2dadcf5334be5aec3acd20

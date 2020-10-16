@@ -1,6 +1,11 @@
 html {
+<<<<<<< HEAD
 	background-color: #f9e4ce;
 	height: 100%;
+=======
+  background-color: #f9e4ce;
+  height: 100%;
+>>>>>>> 0d5446a50dc75a60fd2dadcf5334be5aec3acd20
 }
 
 input:focus,
@@ -10,10 +15,17 @@ button:focus {
 	outline: none;
 }
 body {
+<<<<<<< HEAD
 	background-color: #f9e4ce;
 	font-family: "Montserrat", sans-serif;
 	font-weight: 400;
 	height: 100vh;
+=======
+  background-color: #f9e4ce;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  height: 100vh;
+>>>>>>> 0d5446a50dc75a60fd2dadcf5334be5aec3acd20
 }
 
 #main {
@@ -25,10 +37,17 @@ body {
 }
 
 #wikipedia-info h2 {
+<<<<<<< HEAD
 	font-family: "Montserrat", sans-serif;
 	font-weight: 800;
 	font-size: 30px;
 	margin-bottom: 10px;
+=======
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+  margin-bottom: 10px;
+>>>>>>> 0d5446a50dc75a60fd2dadcf5334be5aec3acd20
 }
 
 article.tile {
@@ -79,14 +98,53 @@ article.tile {
 }
 
 .title {
+<<<<<<< HEAD
 	font-family: "Montserrat", sans-serif;
 	font-weight: 500;
 }
 
 #footer {
 	background-color: #f9e4ce;
+=======
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+#footer {
+  background-color: #f9e4ce;
+>>>>>>> 0d5446a50dc75a60fd2dadcf5334be5aec3acd20
 }
 
 #wrapper {
 	display: none;
+}
+
+#navbar {
+  background-color: black;
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 20px;
+  background: #f9e4ce;
+  padding: 10px;
+  z-index: 10;
+}
+
+#chopCheese-logo-small {
+  display: block;
+  width: 100px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.sticky {
+  position: fixed;
+  margin: 0 auto;
+  top: 20px;
+  width: 100%;
+  right: 0.25%;
+  left: 0.25%;
+  display: inline-flex;
 }
