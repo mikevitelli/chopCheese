@@ -1,3 +1,8 @@
+html { 
+  background-color: #f9e4ce;
+  height: 100vh;
+}
+
 input:focus,
 select:focus,
 textarea:focus,

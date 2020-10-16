@@ -124,7 +124,8 @@ if (window.innerWidth > 500) {
 }
 
 // on search sumbission click, show container
-$(".button").click(function () {
+$(".button").click(function (event) {
+  event.preventDefault();
   $("#wrapper").css("display", "block");
   // assign new classes to the elements that move up
   // element.addClass("classname")
