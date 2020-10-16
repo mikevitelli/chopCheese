@@ -10,9 +10,7 @@ var videoID;
 var fallback = true;
 //var element = $("")
 
-
 function render() {
-  
   // =======================================================
   // reddit API
   // var CLIENT_ID = "RWhVtoOoO6-pLA";
@@ -77,7 +75,7 @@ function render() {
 
   // =======================================================
   // YouTube API
-  
+
   var youtubeAPIkey = "AIzaSyBgEdkUbHxjy56Ij2mu4mZMfMc7I8pL280";
 
   var queryURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${youtubeAPIkey}&type=video&q=${userData}`;
@@ -99,25 +97,15 @@ function render() {
       // $("#youtube").attr("src", "https://www.youtube.com/embed/Xi28pEbMdTw");
     });
   }
-  
-  
-    // Video background script
-    // Loads the YouTube IFrame API JavaScript code.
-    var tag = document.createElement("script");
-    tag.src = "https://www.youtube.com/iframe_api";
-    // Inserts YouTube JS code into the page.
-    var firstScriptTag = document.getElementsByTagName("script")[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    var player;
-    
 
-
-    
-    
-  
-
-
-
+  // Video background script
+  // Loads the YouTube IFrame API JavaScript code.
+  var tag = document.createElement("script");
+  tag.src = "https://www.youtube.com/iframe_api";
+  // Inserts YouTube JS code into the page.
+  var firstScriptTag = document.getElementsByTagName("script")[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  var player;
 
   // +++++++++++++++++++++++++++++++++++++++++++++++++
   // +++++++++++++++++++++++++++++++++++++++++++++++++
@@ -143,27 +131,31 @@ function render() {
   };
 
   url = url + "?origin=*";
-  Object.keys(params).forEach(function (key) { url += "&" + key + "=" + params[key]; });
+  Object.keys(params).forEach(function (key) {
+    url += "&" + key + "=" + params[key];
+  });
 
   fetch(url)
-    .then(function (response) { return response.json(); })
+    .then(function (response) {
+      return response.json();
+    })
     .then(function (response) {
       console.log(response);
       var wikiTitle = $("<h2>").text(response.query.pages[0].title);
       var wikiBody = $("<p>").text(response.query.pages[0].extract);
       $("#wikipedia-info").append(wikiTitle).append(wikiBody);
-
     })
-    .catch(function (error) { console.log(error); });
-
+    .catch(function (error) {
+      console.log(error);
+    });
 }
 
 // onYouTubeIframeAPIReady() is called when the IFrame API is ready to go.
 function onYouTubeIframeAPIReady() {
-  console.log(YT)
+  console.log(YT);
   player = new YT.Player("player", {
-    height: '100%',
-    width: '100%',
+    height: "100%",
+    width: "100%",
     videoId: videoID, // the ID of the video (mentioned above)
     playerVars: {
       autoplay: 1, // start automatically
@@ -176,11 +168,10 @@ function onYouTubeIframeAPIReady() {
       playlist: videoID, // required for looping, matches the video ID
     },
   });
-  console.log(player)
+  console.log(player);
 }
 
-
-  // on search sumbission click, show container
+// on search sumbission click, show container
 $("#search-button").click(function (event) {
   event.preventDefault();
   // grab search value
@@ -189,7 +180,23 @@ $("#search-button").click(function (event) {
     // show tiles
     $("#wrapper").css("display", "block");
     render();
-    // assign new classes to the elements that move up
-    // element.addClass("classname")
   }
+  
+  // assign new classes to the elements that move up
+  // element.addClass("classname")
 });
+
+window.onscroll = function () {
+  stickySearch();
+};
+var header = document.getElementById("navbar");
+var sticky = header.offsetTop;
+function stickySearch() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+    document.getElementById("navbar").style.display = "block";
+  } else {
+    header.classList.remove("sticky");
+    document.getElementById("navbar").style.display = "none";
+  }
+}

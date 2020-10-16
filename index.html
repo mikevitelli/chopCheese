@@ -1,94 +1,119 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>chopCheese</title>
+    <!-- bulma framework -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+    />
+    <!-- custom fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome CSS -->
+    <link
+      href="./develop/fontawesome-free-5.14.0-web/css/all.css"
+      rel="stylesheet"
+    />
+    <!-- custom stylesheet -->
+    <link rel="stylesheet" href="develop/style.css" />
+  </head>
 
-<head>
-  <title>chopCheese</title>
-  <!-- bulma framework -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-  <!-- custom fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;800&display=swap" rel="stylesheet">
-  <!-- Font Awesome CSS -->
-  <link href="./develop/fontawesome-free-5.14.0-web/css/all.css" rel="stylesheet">
-  <!-- custom stylesheet -->
-  <link rel="stylesheet" href="develop/style.css">
-</head>
+  <body>
+    <!-- main container -->
+    <main class="container" id="main">
+      <!-- search area -->
+      <section class="container" id="search-area">
+        <!-- Logo -->
+        <img
+          id="chopCheese-logo"
+          src="assests/chopCheese-logo-vector-black-txt.png"
+          alt="chopCheese Logo"
+        />
+        <form>
+          <!-- Search Input -->
+          <input
+            class="input is-rounded"
+            type="text"
+            placeholder="search"
+            id="search-bar"
+          /><br />
+          <!-- Submit Button -->
+          <button class="button is-medium" id="search-button">
+            <i class="fas fa-hamburger">&nbsp;</i>
+            Search
+          </button>
+        </form>
+      </section>
 
-<body>
-  <!-- main container -->
-  <main class="container" id="main">
-    <!-- search area -->
-    <section class="container" id="search-area">
-      <!-- Logo -->
-      <img id="chopCheese-logo" src="assests/chopCheese-logo-vector-black-txt.png" alt="chopCheese Logo">
-      <form>
-        <!-- Search Input -->
-        <input class="input is-rounded" type="text" placeholder="search" id="search-bar"><br />
-        <!-- Submit Button -->
+      <!--shhhhh Hidden Header-->
+      <div id="navbar">
+        <img
+          id="chopCheese-logo-small"
+          src="assests/burger-transparency.png"
+          alt="chopCheese Logo"
+        />
+        <input
+          class="input is-rounded"
+          type="text"
+          placeholder="search"
+          id="search-bar"
+        />
         <button class="button is-medium" id="search-button">
           <i class="fas fa-hamburger">&nbsp;</i>
           Search
         </button>
-      </form>
-    </section>
+      </div>
+      <!--end of hidden header-->
 
-    <div id="wrapper">
-      <div class="tile is-ancestor">
-        <div class="tile is-4 is-vertical is-parent">
-          <div class="tile is-child box" id="accent-color">
-            <p class="title">reddit</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque
-              tortor
-              vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+      <div id="wrapper">
+        <div class="tile is-ancestor">
+          <div class="tile is-4 is-vertical is-parent">
+            <div class="tile is-child box" id="accent-color">
+              <img alt="gif" class="gif" id="gif-3" />
+            </div>
+            <div class="tile is-child box" id="giphy">
+              <img alt="gif" class="gif" id="gif-1" />
+            </div>
           </div>
-          <div class="tile is-child box" id="giphy">
-            <img alt="gif" class="gif" id="gif-1">
+          <div class="tile is-parent">
+            <div class="tile is-child box" id="youtube">
+              <div id="player"></div>
+            </div>
           </div>
         </div>
-        <div class="tile is-parent">
-          <div class="tile is-child box" id="youtube">
-            <div id="player"></div>
+
+        <div class="tile is-ancestor">
+          <div class="tile is-parent">
+            <div class="tile is-child box" id="wikipedia">
+              <article class="tile notification" id="wikipedia-info"></article>
+            </div>
+          </div>
+
+          <div class="tile is-4 is-vertical is-parent">
+            <div class="tile is-child box" id="accent-color">
+              <img alt="gif" class="gif" id="gif-4" />
+            </div>
+            <div class="tile is-child box" id="giphy">
+              <img alt="gif" class="gif" id="gif-2" />
+            </div>
           </div>
         </div>
       </div>
-
-
-      <div class="tile is-ancestor">
-        <div class="tile is-parent">
-          <div class="tile is-child box" id="wikipedia">
-            <article class="tile notification" id="wikipedia-info">
-
-            </article>
-          </div>
-        </div>
-
-        <div class="tile is-4 is-vertical is-parent">
-          <div class="tile is-child box" id="accent-color">
-            <p class="title">reddit</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque
-              tortor
-              vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
-          </div>
-          <div class="tile is-child box" id="giphy">
-            <img alt="gif" class="gif" id="gif-2">
-          </div>
-        </div>
+    </main>
+    <footer class="footer" id="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>&copy; .chopCheese</strong>
+        </p>
       </div>
-    </div>
+    </footer>
 
-  </main>
-  <footer class="footer" id="footer">
-    <div class="content has-text-centered">
-      <p>
-        <strong>&copy; .chopCheese</strong>
-      </p>
-    </div>
-  </footer>
-
-  <!-- linking to jQuery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!-- linking to JS -->
-  <script src="develop/script.js"></script>
-
-</body>
-
+    <!-- linking to jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- linking to JS -->
+    <script src="develop/script.js"></script>
+  </body>
 </html>
