@@ -1,5 +1,6 @@
-var userData; // = "cats";
-var giphyTiles = 2;
+var userData = "cats";
+var giphyTiles = 4;
+
 var fallbackVideos = {
   "tater tots": ["Xi28pEbMdTw", "4s3VZ4fS_gg", "zLdfPkC9wTE"],
   dogs: ["pRIyR8wbu64", "3dcli9i_pvA", "AcL0MeVZIxM"],
