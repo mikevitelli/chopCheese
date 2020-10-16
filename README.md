@@ -2,14 +2,14 @@
 
 # .chopCheese
 
-Introduction copy about CC
+the best best web app on the internet!
 
 ## User Story
 
 ```
 AS A savy internet user
 I WANT to search for content
-AND view that content in a modern, aesthetically oriented
+AND view that content in a modern, aesthetically oriented way
 SO THAT I can share interesting content with my friends
 ```
 
