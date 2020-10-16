@@ -6,6 +6,11 @@ var fallbackVideos = {
   dogs: ["pRIyR8wbu64", "3dcli9i_pvA", "AcL0MeVZIxM"],
   cats: ["zQIawgxoox4", "rbNkc2xRPpA", "NsUWXo8M7UA"],
 };
+var fallbackWiki = {
+  "tater tots": ["Tater_tots"],
+  dogs: ["Dog"],
+  cats: ["Cat"],
+}
 var videoID;
 var fallback = true;
 //var element = $("")
@@ -123,7 +128,7 @@ function render() {
     action: "query",
     format: "json",
     prop: "extracts",
-    titles: "cat",
+    titles: fallbackWiki[userData],
     formatversion: "2",
     exsentences: "10",
     exlimit: "1",
