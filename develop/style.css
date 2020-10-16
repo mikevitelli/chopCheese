@@ -9,6 +9,7 @@ body {
   background-color: #f9e4ce;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
+  height:100vh;
 }
 
 #main {
@@ -76,4 +77,8 @@ article.tile {
 
 #footer {
   background-color:  #f9e4ce;;
+}
+
+#wrapper {
+  display: none;
 }
