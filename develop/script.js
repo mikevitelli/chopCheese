@@ -73,55 +73,55 @@ for (let i = 0; i < giphyTiles; i++) {
 
 // =======================================================
 // YouTube API
-var youtubeAPIkey = "AIzaSyBgEdkUbHxjy56Ij2mu4mZMfMc7I8pL280";
+// var youtubeAPIkey = "AIzaSyBgEdkUbHxjy56Ij2mu4mZMfMc7I8pL280";
 
-var queryURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${youtubeAPIkey}&type=video&q=${userData}`;
+// var queryURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${youtubeAPIkey}&type=video&q=${userData}`;
 
-if (fallback) {
-  // get random index from fallback choices
-  var randIndex = Math.floor(Math.random() * 3);
-  videoID = fallbackVideos[userData][randIndex];
-} else {
-  $.ajax({
-    url: queryURL,
-    method: "GET",
-    //after the data from the AJAX request comes back
-  }).then(function (response) {
-    // Console log info from 5 videos
-    console.log(response);
-    //log first videos ID
-    console.log(response.items[0].id.videoId);
-    // $("#youtube").attr("src", "https://www.youtube.com/embed/Xi28pEbMdTw");
-  });
-}
-if (window.innerWidth > 500) {
-  // Video background script
-  // Loads the YouTube IFrame API JavaScript code.
-  var tag = document.createElement("script");
-  tag.src = "https://www.youtube.com/iframe_api";
-  // Inserts YouTube JS code into the page.
-  var firstScriptTag = document.getElementsByTagName("script")[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  var player;
-  // onYouTubeIframeAPIReady() is called when the IFrame API is ready to go.
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player("player", {
-      height: '100%',
-      width: '100%',
-      videoId: videoID, // the ID of the video (mentioned above)
-      playerVars: {
-        autoplay: 1, // start automatically
-        controls: 0, // don't show the controls (we can't click them anyways)
-        modestbranding: 1, // show smaller logo
-        loop: 1, // loop when complete
-        mute: 1,
-        cc_load_policy: 0, // Hide closed captions
-        iv_load_policy: 3,
-        playlist: "67w--Fn04xg", // required for looping, matches the video ID
-      },
-    });
-  }
-}
+// if (fallback) {
+//   // get random index from fallback choices
+//   var randIndex = Math.floor(Math.random() * 3);
+//   videoID = fallbackVideos[userData][randIndex];
+// } else {
+//   $.ajax({
+//     url: queryURL,
+//     method: "GET",
+//     //after the data from the AJAX request comes back
+//   }).then(function (response) {
+//     // Console log info from 5 videos
+//     console.log(response);
+//     //log first videos ID
+//     console.log(response.items[0].id.videoId);
+//     // $("#youtube").attr("src", "https://www.youtube.com/embed/Xi28pEbMdTw");
+//   });
+// }
+// if (window.innerWidth > 500) {
+//   // Video background script
+//   // Loads the YouTube IFrame API JavaScript code.
+//   var tag = document.createElement("script");
+//   tag.src = "https://www.youtube.com/iframe_api";
+//   // Inserts YouTube JS code into the page.
+//   var firstScriptTag = document.getElementsByTagName("script")[0];
+//   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+//   var player;
+//   // onYouTubeIframeAPIReady() is called when the IFrame API is ready to go.
+//   function onYouTubeIframeAPIReady() {
+//     player = new YT.Player("player", {
+//       height: '100%',
+//       width: '100%',
+//       videoId: videoID, // the ID of the video (mentioned above)
+//       playerVars: {
+//         autoplay: 1, // start automatically
+//         controls: 0, // don't show the controls (we can't click them anyways)
+//         modestbranding: 1, // show smaller logo
+//         loop: 1, // loop when complete
+//         mute: 1,
+//         cc_load_policy: 0, // Hide closed captions
+//         iv_load_policy: 3,
+//         playlist: "67w--Fn04xg", // required for looping, matches the video ID
+//       },
+//     });
+//   }
+// }
 
 // on search sumbission click, show container
 $(".button").click(function () {
@@ -129,3 +129,41 @@ $(".button").click(function () {
   // assign new classes to the elements that move up
   // element.addClass("classname")
 });
+
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++++++++++
+/*
+    opensearch.js
+    MediaWiki API Demos
+    Demo of `Opensearch` module: Search the wiki and obtain
+	results in an OpenSearch (http://www.opensearch.org) format
+    MIT License
+*/
+
+var url = "https://en.wikipedia.org/w/api.php";
+
+var params = {
+  action: "query",
+  format: "json",
+  prop: "extracts",
+  titles: "pet_door",
+  formatversion: "2",
+  exsentences: "10",
+  exlimit: "1",
+  explaintext: "1",
+};
+
+url = url + "?origin=*";
+Object.keys(params).forEach(function (key) { url += "&" + key + "=" + params[key]; });
+
+fetch(url)
+  .then(function (response) { return response.json(); })
+  .then(function (response) {
+    console.log(response);
+    var wikiTitle = $("<h2>").text(response.query.pages[0].title);
+    var wikiBody = $("<p>").text(response.query.pages[0].extract);
+    $("#wikipedia-info").append(wikiTitle).append(wikiBody);
+
+  })
+  .catch(function (error) { console.log(error); });

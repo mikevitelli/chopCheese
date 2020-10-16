@@ -15,6 +15,13 @@ body {
   margin: 0 10%;
 }
 
+#wikipedia-info h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
 article.tile {
   display: flex;
   flex-direction: column;
