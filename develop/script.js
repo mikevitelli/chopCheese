@@ -106,6 +106,8 @@ if (window.innerWidth > 500) {
   // onYouTubeIframeAPIReady() is called when the IFrame API is ready to go.
   function onYouTubeIframeAPIReady() {
     player = new YT.Player("player", {
+      height: '100%',
+      width: '100%',
       videoId: videoID, // the ID of the video (mentioned above)
       playerVars: {
         autoplay: 1, // start automatically
@@ -127,3 +129,41 @@ $(".button").click(function () {
   // assign new classes to the elements that move up
   // element.addClass("classname")
 });
+
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++++++++++
+/*
+    opensearch.js
+    MediaWiki API Demos
+    Demo of `Opensearch` module: Search the wiki and obtain
+	results in an OpenSearch (http://www.opensearch.org) format
+    MIT License
+*/
+
+var url = "https://en.wikipedia.org/w/api.php";
+
+var params = {
+  action: "query",
+  format: "json",
+  prop: "extracts",
+  titles: "cat",
+  formatversion: "2",
+  exsentences: "10",
+  exlimit: "1",
+  explaintext: "1",
+};
+
+url = url + "?origin=*";
+Object.keys(params).forEach(function (key) { url += "&" + key + "=" + params[key]; });
+
+fetch(url)
+  .then(function (response) { return response.json(); })
+  .then(function (response) {
+    console.log(response);
+    var wikiTitle = $("<h2>").text(response.query.pages[0].title);
+    var wikiBody = $("<p>").text(response.query.pages[0].extract);
+    $("#wikipedia-info").append(wikiTitle).append(wikiBody);
+
+  })
+  .catch(function (error) { console.log(error); });
