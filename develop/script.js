@@ -147,7 +147,7 @@ var params = {
   action: "query",
   format: "json",
   prop: "extracts",
-  titles: "pet_door",
+  titles: "cat",
   formatversion: "2",
   exsentences: "10",
   exlimit: "1",
