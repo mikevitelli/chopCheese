@@ -2,7 +2,7 @@
 
 # .chopCheese
 
-the best best web app on the internet!
+The corner store of the internet!
 
 ## User Story
 
