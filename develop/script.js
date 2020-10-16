@@ -80,7 +80,8 @@ for (let i = 0; i < giphyTiles; i++) {
 // =======================================================
 
 // =======================================================
-// YouTube API
+// YouTube APIe
+
 var youtubeAPIkey = "AIzaSyBgEdkUbHxjy56Ij2mu4mZMfMc7I8pL280";
 
 var queryURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${youtubeAPIkey}&type=video&q=${userData}`;
