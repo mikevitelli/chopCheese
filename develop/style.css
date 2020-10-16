@@ -98,6 +98,7 @@ article.tile {
   margin-bottom: 20px;
   background: #f9e4ce;
   padding: 10px;
+  z-index: 10;
 }
 
 #chopCheese-logo-small {
