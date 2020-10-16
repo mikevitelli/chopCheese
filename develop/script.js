@@ -182,10 +182,13 @@ function onYouTubeIframeAPIReady() {
   // on search sumbission click, show container
 $("#search-button").click(function (event) {
   event.preventDefault();
-  $("#wrapper").css("display", "block");
   // grab search value
   userData = $("#search-bar").val();
-  render();
-  // assign new classes to the elements that move up
-  // element.addClass("classname")
+  if (userData !== "") {
+    // show tiles
+    $("#wrapper").css("display", "block");
+    render();
+    // assign new classes to the elements that move up
+    // element.addClass("classname")
+  }
 });
