@@ -1,4 +1,3 @@
-
 input:focus,
 select:focus,
 textarea:focus,
@@ -8,60 +7,12 @@ button:focus {
 
 body {
   background-color: #f9e4ce;
-}
-#search-area {
-  margin-top: 20%;
-}
-
-#search-box {
-  display: flex;
-  border: 1px solid #dfe1e5;
-  border-radius: 24px;
-  width: 484px;
-  height: 44px;
-  margin: 0 auto;
-  background-color:#F4BF7A;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }
 
-#chopCheese-logo {
-  display: block;
-  width: 272px;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#search-field {
-  border: none;
-  width: 85%;
-  font-size: .79rem;
-  font-weight: 700;
-  margin:0 auto;
-  color: white;
-  background-color:#F4BF7A;
-}
-
-#submit-field {
-  display: block;
-  width: 582px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 18px 0px 0px 0px;
-}
-
-.submit-button {
-  color: #DB9E21;
-  line-height: 27px;
-  background-color: #f2f2f2;
-  border: 1px solid #f2f2f2;
-  border-radius: 4px;
-  color: #DB9E21;
-  font-size: 14px;
-  margin: 11px 4px;
-  padding: 0 16px;
-  line-height: 27px;
-  height: 36px;
-  text-align: center;
+#main {
+  margin: 0 10%;
 }
 
 article.tile {
@@ -70,27 +21,52 @@ article.tile {
   height: 100%;
 }
 
-/* .box {
-  border: solid 6px #f39e30;
-} */
+#search-area {
+  display: block;
+  padding: 10% 10% 8% 10%;
+}
 
-.is-parent {
-  background-color: #f39e30;
-} 
+#search-bar {
+  display: block;
+  width: 484px;
+  margin: 0 auto;
+}
 
-/* #reddit {
-  border: solid 6px #f39e30;
+#search-button {
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+}
 
+#chopCheese-logo {
+  display: block;
+  width: 400px;
+  height: auto;
+  margin: 0 auto;
 }
 
 #youtube {
-  border: solid 6px red;
+  border: solid 6px #ffb7b2;
+  min-height: 300px;
 }
 
 #giphy {
-  border: solid 6px #55acee;
+  border: solid 6px #ffdac1;
 }
 
 #wikipedia {
-  border: solid 6px darkgrey;
-} */
+  border: solid 6px #e2f0cb;
+}
+
+#accent-color {
+  border: solid 6px #b5ead7;
+}
+
+.title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+#footer {
+  background-color:  #f9e4ce;;
+}

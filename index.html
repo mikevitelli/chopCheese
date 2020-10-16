@@ -3,100 +3,102 @@
 
 <head>
   <title>chopCheese</title>
+  <!-- custom stylesheet -->
   <link rel="stylesheet" href="develop/style.css">
+  <!-- bulma framework -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+  <!-- custom fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;800&display=swap" rel="stylesheet">
   <!-- Font Awesome CSS -->
   <link href="./develop/fontawesome-free-5.14.0-web/css/all.css" rel="stylesheet">
 </head>
 
 <body>
-  <main class="container">
-
+  <!-- main container -->
+  <main class="container" id="main">
     <!-- search area -->
-    <section class="section" id="search-area">
+    <section class="container" id="search-area">
       <!-- Logo -->
-      <div class="container">
-        <img id="chopCheese-logo" src="assests/chopCheese-logo.png" alt="chopCheese Logo">
-      </div>
-      <!-- search input -->
+      <img id="chopCheese-logo" src="assests/chopCheese-logo-vector-black-txt.png" alt="chopCheese Logo">
       <form>
-        <div class="container" id="search-box">
-          <input id="search-field"></input>
-        </div>
-        <!-- start submit button -->
-        <div id="submit-field">
-          <button class="button is-medium" id="search-button">
-            <span class="icon">
-              <i class="fas fa-hamburger"></i>
-            </span>
-            <span>chopCheese</span>
-          </button>
+        <!-- Search Input -->
+        <input class="input is-rounded" type="text" placeholder="search" id="search-bar"><br />
+        <!-- Submit Button -->
+        <button class="button is-medium" id="search-button">
+          <i class="fas fa-hamburger">&nbsp;</i>
+          Search
+        </button>
       </form>
     </section>
+
+    <div id="wrapper">
+      <div class="tile is-ancestor">
+        <div class="tile is-4 is-vertical is-parent">
+          <div class="tile is-child box" id="accent-color">
+            <p class="title">reddit</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque
+              tortor
+              vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+          </div>
+          <div class="tile is-child box" id="giphy">
+            <img alt="gif" class="gif" id="gif-1">
+          </div>
+        </div>
+        <div class="tile is-parent">
+          <div class="tile is-child box" id="youtube">
+            <div id="player"></div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <div class="tile is-child box" id="wikipedia">
+            <article class="tile notification">
+              <p class="title">Wiki</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at
+                pulvinar
+                felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo
+                sit
+                amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam.</p>
+              <p>Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis. Pellentesque
+                interdum, nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet
+                erat.
+                Maecenas imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Aenean vitae gravida diam,
+                finibus
+                dignissim turpis. Sed eget varius ligula, at volutpat tortor.</p>
+              <p>Integer sollicitudin, tortor a mattis commodo, velit urna rhoncus erat, vitae congue lectus dolor
+                consequat
+                libero. Donec leo ligula, maximus et pellentesque sed, gravida a metus. Cras ullamcorper a nunc ac
+                porta.
+                Aliquam ut aliquet lacus, quis faucibus libero. Quisque non semper leo.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="tile is-4 is-vertical is-parent">
+          <div class="tile is-child box" id="accent-color">
+            <p class="title">reddit</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque
+              tortor
+              vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+          </div>
+          <div class="tile is-child box" id="giphy">
+            <img alt="gif" class="gif" id="gif-2">
+          </div>
+        </div>
+      </div>
     </div>
-    </section>
-    <!-- end subit button -->
-    <div class="tile is-ancestor">
-      <div class="tile is-4 is-vertical is-parent">
-        <div class="tile is-child box" id="reddit">
-          <p class="title">reddit</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor
-            vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
-        </div>
-        <div class="tile is-child box" id="giphy">
-          <img alt="gif" class="gif" id="gif-1">
-        </div>
-      </div>
-      <div class="tile is-parent">
-        <div class="tile is-child box" id="youtube">
-          <p class="title">youtube</p>
 
-          <div id="player"></div>
-
-
-        </div>
-      </div>
-    </div>
-
-    <div class="tile is-ancestor">
-
-      <div class="tile is-parent">
-        <div class="tile is-child box" id="wikipedia">
-          <article class="tile is-child notification">
-            <p class="title">Wiki</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at
-              pulvinar
-              felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo
-              sit
-              amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam.</p>
-            <p>Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis. Pellentesque
-              interdum, nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet
-              erat.
-              Maecenas imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Aenean vitae gravida diam,
-              finibus
-              dignissim turpis. Sed eget varius ligula, at volutpat tortor.</p>
-            <p>Integer sollicitudin, tortor a mattis commodo, velit urna rhoncus erat, vitae congue lectus dolor
-              consequat
-              libero. Donec leo ligula, maximus et pellentesque sed, gravida a metus. Cras ullamcorper a nunc ac
-              porta.
-              Aliquam ut aliquet lacus, quis faucibus libero. Quisque non semper leo.</p>
-          </article>
-        </div>
-      </div>
-
-      <div class="tile is-4 is-vertical is-parent">
-        <div class="tile is-child box" id="reddit">
-          <p class="title">reddit</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor
-            vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
-        </div>
-        <div class="tile is-child box" id="giphy">
-          <img alt="gif" class="gif" id="gif-2">
-        </div>
-      </div>
   </main>
+  <footer class="footer" id="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>&copy; .chopCheese</strong>
+      </p>
+    </div>
+  </footer>
 
   <!-- linking to jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
