@@ -145,6 +145,7 @@ function render() {
       return response.json();
     })
     .then(function (response) {
+      $("#wikipedia-info").html("");
       console.log(response);
       var wikiTitle = $("<h2>").text(response.query.pages[0].title);
       var wikiBody = $("<p>").text(response.query.pages[0].extract);
