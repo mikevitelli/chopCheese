@@ -10,7 +10,7 @@ var fallbackWiki = {
   "tater tots": ["Tater_tots"],
   dogs: ["Dog"],
   cats: ["Cat"],
-}
+};
 var videoID;
 var fallback = true;
 //var element = $("")
@@ -55,27 +55,6 @@ function render() {
     });
   }
 
-  // =======================================================
-
-  // =======================================================
-  // Wiki API
-
-  // var userData = "tater tots";
-  // var searchQuery = userData.replace(" ", "%20");
-
-  // var queryURL = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${searchQuery}&origin=*`;
-
-  // $.ajax({
-  //   url: queryURL,
-  //   method: "GET",
-  //   //after the data from the AJAX request comes back
-  // }).then(function (response) {
-  //   // save the img url property
-
-  //   // fill in dummy block with image from AJAX req
-
-  //   console.log(response);
-  // });
   // =======================================================
 
   // =======================================================
@@ -187,7 +166,7 @@ $("#search-button").click(function (event) {
     $("#wrapper").css("display", "block");
     render();
   }
-  
+
   // assign new classes to the elements that move up
   // element.addClass("classname")
 });
