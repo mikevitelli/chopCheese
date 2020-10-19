@@ -196,9 +196,10 @@ window.onscroll = function () {
   stickySearch();
 };
 var header = document.getElementById("navbar");
-var sticky = header.offsetTop;
+var wrapper = document.getElementById("wrapper");
+var sticky = wrapper.offsetTop;
 function stickySearch() {
-  if (window.pageYOffset > sticky) {
+  if (window.pageYOffset > 250) {
     header.classList.add("sticky");
     document.getElementById("navbar").style.display = "block";
   } else {
@@ -206,3 +207,5 @@ function stickySearch() {
     document.getElementById("navbar").style.display = "none";
   }
 }
+
+console.log(wrapper.offsetTop);
