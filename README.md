@@ -27,6 +27,9 @@ WHEN I click on a tile
 THEN the content of that tile is added to my clipboard
 ```
 
+## Languages
+SCSS, Less, CSS, JavaScript, HTML
+
 ## Screenshots
 
 ![Results](assests/SCREENSHOT1.png)
